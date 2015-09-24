@@ -1,0 +1,25 @@
+#!/bin/sh
+exec scala -classpath "jsoup-1.8.3.jar" -savecompiled "$0" "$@"
+!#
+
+/* 
+ * extractTables
+ * J. Femister
+ */
+
+import scala.collection.JavaConversions._
+import org.jsoup.Jsoup
+import org.jsoup.helper.Validate
+import org.jsoup.nodes.Document
+import org.jsoup.nodes.Element
+import org.jsoup.select.Elements
+import java.io.File
+
+val input:File = new File(args(0))
+val doc:Document = Jsoup.parse(input, "UTF-8")
+val chartrows = doc.select("table.bse-chart-table tr")
+chartrows.foreach((row:Element) => if (row.text().startsWith("Hard") || 
+                                       row.text().startsWith("Ace") ||
+                                       row.text().startsWith("(")) 
+                                          println(row.text().split("\\s+").mkString("|")))
+

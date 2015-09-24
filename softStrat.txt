@@ -1,0 +1,8 @@
+Ace|+|2|H|H|H|D|D|H|H|H|H|H
+Ace|+|3|H|H|H|D|D|H|H|H|H|H
+Ace|+|4|H|H|D|D|D|H|H|H|H|H
+Ace|+|5|H|H|D|D|D|H|H|H|H|H
+Ace|+|6|H|D|D|D|D|H|H|H|H|H
+Ace|+|7|DS|DS|DS|DS|DS|S|S|H|H|H
+Ace|+|8|S|S|S|S|DS|S|S|S|S|S
+Ace|+|9|S|S|S|S|S|S|S|S|S|S

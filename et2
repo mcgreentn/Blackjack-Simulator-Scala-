@@ -1,0 +1,15 @@
+#!/bin/sh
+exec scala -classpath "jsoup-1.8.3.jar" -savecompiled "$0" "$@"
+!#
+
+/* 
+ * extractTables - version 2
+ * J. Femister
+ * Note: This is for all of you who have to have the shortest implementation :-)
+ */
+
+import scala.collection.JavaConversions._
+import org.jsoup._
+
+Jsoup.parse(new java.io.File(args(0)), "UTF-8").select("table.bse-chart-table tr").map(_.text).filter(x => !"""(Hard|Ace|\()""".r.findPrefixOf(x).isEmpty).foreach((x:String) => println(x.split("\\s+").mkString("|")))
+
